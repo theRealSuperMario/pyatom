@@ -69,7 +69,10 @@ copyright = u'2012, Jesse Mendonca, Ken Song, James Tatum, Andrew Wu'
 #
 # The short X.Y version.
 # Set the __version__ variable
-execfile('../atomac/version.py') 
+try:
+    execfile('../atomac/version.py')
+except NameError:
+    exec (open('../atomac/version.py').read())
 version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
